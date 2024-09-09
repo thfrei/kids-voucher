@@ -1,0 +1,27 @@
+{
+  "name": "kids-voucher",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:create": "prisma db push",
+    "db:seed": "node -r dotenv/config prisma/seed.js",
+    "db:studio": "prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.19.1",
+    "dotenv": "16.4.5",
+    "next": "14.2.7",
+    "react": "^18",
+    "react-dom": "^18",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.7",
+    "prisma": "^5.19.1"
+  }
+}
