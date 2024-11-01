@@ -8,8 +8,10 @@ web app to host an interactive app for kids so they get weekly vouchers that the
 git clone https://github.com/thfrei/kids-voucher
 mv .env.template .env.local
 touch prisma/dev.db
-npm install
-npm run dev
+npx prisma db push
+yarn
+yarn db:seed
+yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
