@@ -4,9 +4,11 @@ web app to host an interactive app for kids so they get weekly vouchers that the
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+git clone https://github.com/thfrei/kids-voucher
+mv .env.template .env.local
+touch prisma/dev.db
+npm install
 npm run dev
 ```
 
