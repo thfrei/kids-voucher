@@ -6,11 +6,9 @@ web app to host an interactive app for kids so they get weekly vouchers that the
 
 ```bash
 git clone https://github.com/thfrei/kids-voucher
-mv .env.template .env.local
-touch prisma/dev.db
-npx prisma db push
+mv .env.template .env
+npx prisma migrate dev
 yarn
-yarn db:seed
 yarn dev
 ```
 
