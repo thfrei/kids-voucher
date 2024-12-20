@@ -20,7 +20,13 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Database
 
-```
+```cmd
 npx prisma db push
 npx prisma studio
+```
+
+### Change Schema
+
+```cmd
+npx prisma migrate dev --name [migrationname]
 ```

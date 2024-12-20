@@ -16,14 +16,28 @@ model Post {
 }
 
 model Voucher {
-  id        Int @id @default(autoincrement())
+  id        String @id @default(cuid())
   image     String
   name      String?
+  active    Boolean @default(true)
+
+  Usage Usage[]
 }
 
 model User {
-  id       Int @id @default(autoincrement())
+  id       String @id @default(cuid())
+  name    String
   email    String
   password String
   role     String
+  Usage Usage[]
+}
+
+model Usage {
+  id        String @id @default(cuid())
+  user      User? @relation(fields: [userId], references: [id])
+userId String?
+  voucher   Voucher? @relation(fields: [voucherid], references: [id])
+voucherid String?
+  usedAt  DateTime? @default(now())
 }
