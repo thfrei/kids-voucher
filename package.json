@@ -2,6 +2,11 @@
   "name": "kids-voucher",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10",
+    "yarn": ">=1.22"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,19 +14,21 @@
     "lint": "next lint",
     "db:create": "prisma db push",
     "db:seed": "node -r dotenv/config prisma/seed.js",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "docker:build:windows": "docker build --platform=linux/amd64 --platform=linux/arm64 --platform=linux/arm --provenance=false -t kids-voucher:v%npm_package_version% -f ./Dockerfile ."
   },
   "dependencies": {
-    "@prisma/client": "5.21.1",
-    "dotenv": "16.4.5",
-    "next": "14.2.16",
-    "react": "18",
-    "react-dom": "18",
+    "@prisma/client": "6.1.0",
+    "dotenv": "16.4.7",
+    "next": "15.1.2",
+    "react": "19",
+    "react-dom": "19",
     "sqlite3": "5.1.7"
   },
   "devDependencies": {
-    "eslint": "8",
-    "eslint-config-next": "14.2.7",
-    "prisma": "5.21.1"
-  }
+    "eslint": "9",
+    "eslint-config-next": "15.1.2",
+    "prisma": "6.1.0"
+  } ,
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
 }
